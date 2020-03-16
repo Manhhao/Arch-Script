@@ -19,19 +19,13 @@ mkinitcpio -P
 # root password
 passwd
 
-# bootloader
-grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB
-
-mkdir /mnt2
-mount /dev/sda2 /mnt2
-
-grub-mkconfig -o /boot/grub/grub.cfg
-
 # user creation
 useradd -m -G wheel,power,iput,storage,uucp,network -s /usr/bin/zsh manhhao
 sed --in-place 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+NOPASSWD:\s\+ALL\)/\1/' /etc/sudoers
 echo "Set password for new user manhhao"
 passwd manhhao
+
+efibootmgr --disk /dev/sda --part 5 --create --label "Arch Openbox Linux" --loader /vmlinuz-linux --unicode 'root=/dev/sda6 rw initrd=\initramfs-linux.img' --verbose
 
 # final setup
 systemctl enable lxdm.service
