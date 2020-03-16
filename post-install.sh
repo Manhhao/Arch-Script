@@ -20,12 +20,12 @@ mkinitcpio -P
 passwd
 
 # user creation
-useradd -m -G wheel,power,iput,storage,uucp,network -s /usr/bin/zsh manhhao
-sed --in-place 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+NOPASSWD:\s\+ALL\)/\1/' /etc/sudoers
-echo "Set password for new user manhhao"
+useradd -m -G wheel,audio,video -s /usr/bin/zsh manhhao
+sed --in-place 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+ALL\)/\1/' /etc/sudoers
+echo "set password for new user manhhao"
 passwd manhhao
 
-efibootmgr --disk /dev/sda --part 5 --create --label "Arch Openbox Linux" --loader /vmlinuz-linux --unicode 'root=/dev/sda6 rw initrd=\initramfs-linux.img' --verbose
+efibootmgr --disk /dev/sda --part 5 --create --label "Arch Openbox" --loader /vmlinuz-linux --unicode 'root=/dev/sda6 rw initrd=\initramfs-linux.img' --verbose
 
 # final setup
 systemctl enable lxdm.service

@@ -28,11 +28,6 @@ cp -rfv post-install.sh /mnt/root
 chmod a+x /mnt/root/post-install.sh
 
 # chroot into new system
-echo "please run the second script file via ./post-install.sh"
+echo "please run the second script file via ./root/post-install.sh, press any key to chroot"
 read tmpvar
 arch-chroot /mnt
-
-# Finish
-echo "press any key to reboot"
-read tmpvar
-reboot
