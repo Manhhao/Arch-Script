@@ -17,8 +17,8 @@ mkdir /mnt/boot
 mount /dev/sda5 /mnt/boot/
 
 # pacstrap necessary files
-echo "Installing Arch Linux, Openbox and GRUB2 as bootloader" 
-pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd efibootmgr grub os-prober xorg-server xorg-apps xorg-xinit nvidia lxdm-gtk3 openbox ttf-dejavu ttf-liberation
+echo "Installing Arch Linux and Openbox" 
+pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd efibootmgr xorg-server xorg-apps xorg-xinit nvidia lxdm-gtk3 openbox ttf-dejavu ttf-liberation
 
 # gen fstab
 genfstab -U /mnt >> /mnt/etc/fstab
