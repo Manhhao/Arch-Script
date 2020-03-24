@@ -1,10 +1,10 @@
 echo "Manhhao's Custom Arch Dualboot Setup Installation"
 
 # format partitions
-mkfs.fat -F32 /dev/sda5
-mkfs.ext4 /dev/sda6
-mkswap /dev/sda7
-swapon /dev/sda7
+mkfs.fat -F32 /dev/sda4
+mkfs.ext4 /dev/sda5
+mkswap /dev/sda6
+swapon /dev/sda6
 
 # Initate pacman keyring
 pacman-key --init
@@ -12,9 +12,9 @@ pacman-key --populate archlinux
 pacman-key --refresh-keys
 
 # mount partitions
-mount /dev/sda6 /mnt
+mount /dev/sda5 /mnt
 mkdir /mnt/boot
-mount /dev/sda5 /mnt/boot/
+mount /dev/sda4 /mnt/boot/
 
 # pacstrap necessary files
 echo "Installing Arch Linux and Openbox" 
