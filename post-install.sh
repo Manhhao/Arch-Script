@@ -31,4 +31,7 @@ efibootmgr --disk /dev/sda --part 5 --create --label "Arch Openbox" --loader /vm
 systemctl enable lxdm.service
 systemctl enable dhcpcd.service
 
-echo "Configuration done. You can now exit chroot."
+echo "This is where you do stuff yourself, see the following line?"
+blkid -s PARTUUID -o value /dev/sda6
+echo "Type the string behind PARTUUID in the following command
+echo "efibootmgr --disk /dev/sda --part 5 --create --label "Arch Openbox" --loader /vmlinuz-linux --unicode 'root=PARTUUID= rw initrd=\initramfs-linux.img' --verbose"
