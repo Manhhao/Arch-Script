@@ -18,7 +18,7 @@ mount /dev/sda4 /mnt/boot/
 
 # pacstrap necessary files
 echo "Installing Arch Linux and Openbox" 
-pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd efibootmgr xorg-server xorg-apps xorg-xinit nvidia lightdm lightdm-webkit2-greeter openbox ttf-dejavu ttf-liberation
+pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd efibootmgr xorg-server xorg-apps xorg-xinit nvidia lightdm lightdm-webkit2-greeter openbox ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji noto-fonts-cjk
 
 # gen fstab
 genfstab -U /mnt >> /mnt/etc/fstab
