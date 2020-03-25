@@ -34,4 +34,4 @@ echo "efibootmgr --disk /dev/sda --part 4 --create --label "Arch Openbox" --load
 systemctl enable lightdm.service
 systemctl enable dhcpcd.service
 
-echo "Done!"
+echo "Almost done, edit the lightdm greeter (read the README :D) and you are good to go!"
