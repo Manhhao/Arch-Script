@@ -25,11 +25,13 @@ sed --in-place 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+ALL\)/\1/' /etc/sudoers
 echo "set password for new user manhhao"
 passwd manhhao
 
+variable=$(blkid -s PARTUUID -o value /dev/sda5)
+echo "The PARTUUID is: $variable"
+
+echo "efibootmgr --disk /dev/sda --part 4 --create --label "Arch Openbox" --loader /vmlinuz-linux --unicode 'root=PARTUUID=$variable rw initrd=\initramfs-linux.img' --verbose"
+
 # final setup
 systemctl enable lightdm.service
 systemctl enable dhcpcd.service
 
-echo "This is where you do stuff yourself, see the following line?"
-blkid -s PARTUUID -o value /dev/sda5
-echo "Type the string behind PARTUUID in the following command
-echo "efibootmgr --disk /dev/sda --part 4 --create --label "Arch Openbox" --loader /vmlinuz-linux --unicode 'root=PARTUUID= rw initrd=\initramfs-linux.img' --verbose"
+echo "Done!"
