@@ -1,5 +1,3 @@
-echo "Manhhao's Custom Arch Dualboot Setup Installation Part 2"
-
 # Set date time
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 hwclock --systohc
