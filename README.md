@@ -10,7 +10,7 @@ pacman -Su git
 ```
 and then simply clone the repository with
 ```bash
-git clone https://github.com/Manhhao/Arch-Openbox.git && cd Arch-Openbox
+git clone https://github.com/Manhhao/Arch-Script.git && cd Arch-Script
 ```
 Also consider editing your mirrorlist before running the script, the installation will take a very loooooooooooong time otherwise.
 
