@@ -16,7 +16,7 @@ Also consider editing your mirrorlist before running the script, the installatio
 
 ## Preparation
 1. The script does not install a bootloader, instead, it creates its own EFI device, so please make
-   sure your Mainboard supports proper UEFI booting.
+   sure your mainboard supports proper UEFI booting.
 2. This script assumes that partitioning has already been done, if not, please do so via
     ```bash
     gdisk
