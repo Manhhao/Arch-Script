@@ -1,6 +1,6 @@
-# Arch-Openbox
+# Arch-Script
 
-This is an (almost) fully automated install script for an Arch-Linux + Openbox environment.
+This is an (almost) fully automated install script for an Arch-Linux installation. It installs the Openbox environment and proprietary nvidia drivers by default, although this can be edited.
 The repository is still being updated, things might become easier in the future (though I consider this easy enough).
 
 ## Installation
@@ -62,6 +62,11 @@ Also consider editing your mirrorlist before running the script, the installatio
     ``` bash
     chmod a+x install.sh
     ```
+5. You might not like Openbox, you can edit the following command
+    ``` bash
+    pacstrap /mnt base base-devel [...] openbox
+    ```
+    Simply remove ``` openbox ``` and add one of the [supported Desktop Environments](https://wiki.archlinux.org/index.php/Desktop_environment#Officially_supported)
 ## Usage
 Now that you have edited the script to your liking, it is time to simply run the script:
 
@@ -69,4 +74,6 @@ Now that you have edited the script to your liking, it is time to simply run the
 ./install.sh
 ```
 
-Follow the instructions and you should be good to go!
+After running the post-install script, please make sure to edit the lightdm greeter via this [guide](https://wiki.archlinux.org/index.php/LightDM#Installation) to ```lightdm-webkit2-greeter```, you will not be able to boot into your desktop otherwise!
+
+If you have reached this point without any issues, your installation should be done and ready for usage!
