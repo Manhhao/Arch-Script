@@ -28,7 +28,7 @@ passwd manhhao
 variable=$(blkid -s PARTUUID -o value /dev/sda5)
 echo "The PARTUUID is: $variable"
 
-echo "efibootmgr --disk /dev/sda --part 4 --create --label "Arch Openbox" --loader /vmlinuz-linux --unicode 'root=PARTUUID=$variable rw initrd=\initramfs-linux.img' --verbose"
+echo "efibootmgr --disk /dev/sda --part 4 --create --label "Arch Openbox" --loader /vmlinuz-linux --unicode 'root=PARTUUID="$variable" rw initrd=\initramfs-linux.img' --verbose"
 
 # final setup
 systemctl enable lightdm.service
