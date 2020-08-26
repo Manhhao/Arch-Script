@@ -1,5 +1,7 @@
 # Arch-Script
 
+This README is a WIP as I am working on making a few more changes
+
 This is an (almost) fully automated install script for an Arch-Linux installation. It installs the Openbox environment and proprietary nvidia drivers by default, although this can be edited.
 The repository is still being updated, things might become easier in the future (though I consider this easy enough).
 
@@ -74,6 +76,11 @@ Now that you have edited the script to your liking, it is time to simply run the
 ./install.sh
 ```
 
+I choose not to include a bootloader, instead, run the following command:
+    ``` bash
+echo "efibootmgr --disk /dev/sda --part 4 --create --label "Arch Linux - Manhhao Edition" --loader /vmlinuz-linux --unicode 'root=PARTUUID="$variable" rw initrd=\initramfs-linux.img' --verbose"
+    ```
+	
 After running the post-install script, please make sure to edit the lightdm greeter via this [guide](https://wiki.archlinux.org/index.php/LightDM#Installation) to ```lightdm-webkit2-greeter```, you will not be able to boot into your desktop otherwise!
 
 If you have reached this point without any issues, your installation should be done and ready for usage!

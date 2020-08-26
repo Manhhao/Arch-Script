@@ -8,8 +8,8 @@ locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
 # hostname
-echo "manhhao-pc" >> /etc/hostname
-echo "127.0.1.1 manhhao-pc.localdomain  manhhao-pc" >> /etc/hosts
+echo "kynux-pc" >> /etc/hostname
+echo "127.0.1.1 kynux-pc.localdomain  kynux-pc" >> /etc/hosts
 
 # initramfs
 mkinitcpio -P
@@ -18,18 +18,16 @@ mkinitcpio -P
 passwd
 
 # user creation
-useradd -m -G wheel,audio,video -s /usr/bin/zsh manhhao
+useradd -m -G wheel,audio,video -s /usr/bin/zsh kynux
 sed --in-place 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+ALL\)/\1/' /etc/sudoers
-echo "set password for new user manhhao"
-passwd manhhao
+echo "set password for new user kynux"
+passwd kynux
 
 variable=$(blkid -s PARTUUID -o value /dev/sda5)
 echo "The PARTUUID is: $variable"
-
-echo "efibootmgr --disk /dev/sda --part 4 --create --label "Arch Openbox" --loader /vmlinuz-linux --unicode 'root=PARTUUID="$variable" rw initrd=\initramfs-linux.img' --verbose"
 
 # final setup
 systemctl enable lightdm.service
 systemctl enable dhcpcd.service
 
-echo "Almost done, edit the lightdm greeter (read the README :D) and you are good to go!"
+echo "Almost done, follow the last few steps on the README and you are good to go!"

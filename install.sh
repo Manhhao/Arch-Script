@@ -17,8 +17,8 @@ mkdir /mnt/boot
 mount /dev/sda4 /mnt/boot/
 
 # pacstrap necessary files
-echo "Installing Arch Linux and Openbox" 
-pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd efibootmgr xorg-server xorg-apps xorg-xinit nvidia lightdm lightdm-webkit2-greeter ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji noto-fonts-cjk openbox
+echo "Installing Arch Linux and Xfce 4" 
+pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd efibootmgr xorg-server xorg-apps xorg-xinit nvidia lightdm lightdm-gtk-greeter ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji noto-fonts-cjk xfce4 xfce4-goodies
 
 # gen fstab
 genfstab -U /mnt >> /mnt/etc/fstab
